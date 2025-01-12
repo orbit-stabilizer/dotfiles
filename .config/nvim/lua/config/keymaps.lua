@@ -10,8 +10,8 @@ n_keymaps = {
     ["<leader>wk"] = "<C-w>k",
     ["<leader>wl"] = "<C-w>l",
     ["<leader>wd"] = "<C-w>c",
-    ["<leader>ws"] = ":vsplit<cr>",
-    ["<leader>wz"] = ":split<cr>",
+    ["<leader>ws"] = ":split<cr>",
+    ["<leader>wv"] = ":vsplit<cr>",
   },
   buffer = {
     ["<leader>bn"] = ":bn<cr>",
