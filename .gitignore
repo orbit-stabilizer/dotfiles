@@ -1,0 +1,2 @@
+# Ignore .tasks files for the doing.nvim plugin
+.tasks
