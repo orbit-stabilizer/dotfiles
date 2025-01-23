@@ -37,7 +37,7 @@ n_keymaps = {
   },
   misc = {
     ["M"] = "J",
-    ["<leader>h,"] = "K",
+    ["<leader>h"] = "K",
     ["<leader><leader>"] = ":",
   },
 }
