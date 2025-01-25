@@ -2,8 +2,39 @@
 
 local builtin = require("telescope.builtin")
 local clay = require("config.clay")
+local files = require("mini.files")
 
 n_keymaps = {
+  buffer = {
+    ["<leader>bn"] = ":bn<cr>",
+    ["<leader>bp"] = ":bp<cr>",
+    ["<leader>bd"] = ":bd!<cr>",
+  },
+  clay = {
+    ["<localleader>cs"] = clay.start,
+    -- ["<localleader>cef"] = clay.eval_form,
+    -- ["<localleader>cen"] = clay.eval_ns,
+  },
+  file_explorer = {
+    ["-"] = files.open,
+  },
+  misc = {
+    ["M"] = "J",
+    ["<leader>h"] = "K",
+    ["<leader><leader>"] = ":",
+  },
+  navigation = {
+    ["H"] = "^",
+    ["J"] = "6j",
+    ["K"] = "6k",
+    ["L"] = "g_",
+  },
+  telescope = {
+    ["<leader>ff"] = builtin.find_files,
+    ["<leader>ft"] = builtin.live_grep,
+    ["<leader>fb"] = builtin.buffers,
+    ["<leader>fh"] = builtin.help_tags,
+  },
   window = {
     ["<leader>wh"] = "<C-w>h",
     ["<leader>wj"] = "<C-w>j",
@@ -12,33 +43,6 @@ n_keymaps = {
     ["<leader>wd"] = "<C-w>c",
     ["<leader>ws"] = ":split<cr>",
     ["<leader>wv"] = ":vsplit<cr>",
-  },
-  buffer = {
-    ["<leader>bn"] = ":bn<cr>",
-    ["<leader>bp"] = ":bp<cr>",
-    ["<leader>bd"] = ":bd!<cr>",
-  },
-  telescope = {
-    ["<leader>ff"] = builtin.find_files,
-    ["<leader>ft"] = builtin.live_grep,
-    ["<leader>fb"] = builtin.buffers,
-    ["<leader>fh"] = builtin.help_tags,
-  },
-  navigation = {
-    ["H"] = "^",
-    ["J"] = "6j",
-    ["K"] = "6k",
-    ["L"] = "g_",
-  },
-  clay = {
-    ["<localleader>cs"] = clay.start,
-    -- ["<localleader>cef"] = clay.eval_form,
-    -- ["<localleader>cen"] = clay.eval_ns,
-  },
-  misc = {
-    ["M"] = "J",
-    ["<leader>h"] = "K",
-    ["<leader><leader>"] = ":",
   },
 }
 
