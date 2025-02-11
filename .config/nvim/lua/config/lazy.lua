@@ -16,7 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
--- Setting mapleader and maplocalleader before lazy
+-- Setting leader and localleader before lazy
 vim.g.mapleader = " "
 vim.g.maplocalleader = ";"
 

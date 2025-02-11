@@ -4,5 +4,7 @@ return {
   config = function()
     require("lspconfig").clojure_lsp.setup{}
     require("lspconfig").nil_ls.setup{}
+    require("lspconfig").ruff.setup{}
+    require("lspconfig").basedpyright.setup{}
   end
 }

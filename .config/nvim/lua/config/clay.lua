@@ -14,11 +14,10 @@ return {
       code = code,
     })
   end,
-  eval_form = function ()
+  eval_form = function()
     local form_content = extract.form({ root = true }).content
     local source_path = vim.fn.expand("%:p")
-    local code =
-    string.format('(scicloj.clay.v2.api/make! {:source-path "%s" :single-form %s})', source_path, form_content)
+    local code = string.format('(scicloj.clay.v2.api/make! {:source-path "%s" :single-form (quote %s)})', source_path, form_content)
 
     eval["eval-str"]({
       origin = "custom-clay-wrapper",

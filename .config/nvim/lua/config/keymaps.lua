@@ -12,8 +12,8 @@ n_keymaps = {
   },
   clay = {
     ["<localleader>cs"] = clay.start,
-    -- ["<localleader>cef"] = clay.eval_form,
-    -- ["<localleader>cen"] = clay.eval_ns,
+    ["<localleader>cef"] = clay.eval_form,
+    ["<localleader>cn"] = clay.eval_ns,
   },
   file_explorer = {
     ["-"] = files.open,
