@@ -4,7 +4,7 @@ local builtin = require("telescope.builtin")
 local clay = require("config.clay")
 local files = require("mini.files")
 
-n_keymaps = {
+local n_keymaps = {
   buffer = {
     ["<leader>bn"] = ":bn<cr>",
     ["<leader>bp"] = ":bp<cr>",
@@ -46,11 +46,11 @@ n_keymaps = {
   },
 }
 
-t_keymaps = {
+local t_keymaps = {
   ["<ESC>"] = "<C-\\><C-n>",
 }
 
-autocmds = {
+local autocmds = {
   ["TextYankPost"] = function() vim.highlight.on_yank() end,
 }
 
