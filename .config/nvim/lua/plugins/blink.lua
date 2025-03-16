@@ -23,7 +23,21 @@ return {
     -- C-k: Toggle signature help
     --
     -- See the full "keymap" documentation for information on defining your own keymap.
-    keymap = { preset = 'default' },
+    keymap = {
+      preset = 'default',
+
+      ['<C-k>'] = { 'select_prev', 'fallback' },
+      ['<C-j>'] = { 'select_next', 'fallback' },
+      ['<TAB>'] = {'accept', 'fallback'},
+    },
+
+    completion =  {
+      accept = {
+        auto_brackets = {
+          enabled = false,
+        },
+      },
+    },
 
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups

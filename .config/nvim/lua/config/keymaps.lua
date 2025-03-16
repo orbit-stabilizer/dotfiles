@@ -28,6 +28,7 @@ local n_keymaps = {
   misc = {
     ["M"] = "J",
     ["<leader><leader>"] = ":",
+    ["<C-d>"] = "", -- Remove default keymap due to conflict with keymap for blink
   },
   navigation = {
     ["H"] = "^",
