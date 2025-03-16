@@ -1,9 +1,9 @@
 return {
     "Olical/conjure",
-    ft = { "clojure", "python" },
+    ft = { "clojure", "python", "haskell" },
     lazy = true,
     init = function()
-      -- Rebind it from K to ;h
+      -- Rebind it from K to <localleader>h
       vim.g["conjure#mapping#doc_word"] = {"<localleader>h"}
       -- Set configuration options here
       -- Uncomment this to get verbose logging to help diagnose internal Conjure issues

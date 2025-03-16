@@ -11,6 +11,7 @@ local options = {
   inccommand = "split",
   ignorecase = true,
   termguicolors = true,
+  laststatus = 0, -- Remove status bar
 }
 
 for k, v in pairs(options) do

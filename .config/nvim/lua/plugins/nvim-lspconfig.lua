@@ -7,16 +7,28 @@
 
 return {
   "neovim/nvim-lspconfig",
-  priority = 700, 
-  dependencies = { "saghen/blink.cmp" },
+  priority = 700,
+  dependencies = {
+    "saghen/blink.cmp",
+    -- Makes it so the LSP doesn't yell when it sees "vim" in lua files
+    {
+      "folke/lazydev.nvim",
+      opts = {
+        library = {
+          { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+        },
+      },
+    },
+  },
 
   opts = {
     servers = {
       basedpyright = {},
-      clojurelsp = {},
+      clojure_lsp = {},
       lua_ls = {},
       nil_ls = {},
       ruff = {},
+      rust_analyzer = {},
     }
   },
   config = function(_, opts)

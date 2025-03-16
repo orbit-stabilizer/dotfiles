@@ -18,9 +18,15 @@ local n_keymaps = {
   file_explorer = {
     ["-"] = files.open,
   },
+  lsp = {
+    ["gb"] = "<C-t>", -- go back from defintion
+    ["gd"] = vim.lsp.buf.definition,
+    ["gh"] = vim.lsp.buf.hover,
+    ["grr"] = vim.lsp.buf.references,
+    ["grn"] = vim.lsp.buf.rename,
+  },
   misc = {
     ["M"] = "J",
-    ["<leader>h"] = "K",
     ["<leader><leader>"] = ":",
   },
   navigation = {
@@ -54,6 +60,7 @@ local autocmds = {
   ["TextYankPost"] = function() vim.highlight.on_yank() end,
 }
 
+-- Set all keymaps
 for _, keymaps in pairs(n_keymaps) do
   for k, v in pairs(keymaps) do
     vim.keymap.set("n", k, v, { noremap = true, silent = true })
