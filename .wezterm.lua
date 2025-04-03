@@ -1,8 +1,6 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-config.default_prog = {"/etc/profiles/per-user/falcon/bin/nu"}
-
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
 
@@ -26,5 +24,7 @@ config.keys = {
   {key = "k", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Up")},
   {key = "l", mods = "OPT", action = wezterm.action.ActivatePaneDirection("Right")},
 }
+
+config.default_prog = {"/opt/homebrew/bin/nu"}
 
 return config
