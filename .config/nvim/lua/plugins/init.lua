@@ -148,6 +148,20 @@ return {
     end,
   },
 
+  {
+    "nvzone/showkeys",
+    cmd = "ShowkeysToggle",
+    opts = {
+      timeout = 1,
+      maxkeys = 5,
+      -- more opts
+    },
+  },
+
+  { "mrjones2014/smart-splits.nvim" },
+
   -- Disable default plugins
   { "nvim-tree/nvim-tree.lua", enabled = false },
+  { "akinsho/toggleterm.nvim", enabled = false },
+
 }

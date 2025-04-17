@@ -25,9 +25,9 @@ local options = {
     },
 
     ["<CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif require("luasnip").expand_or_jumpable() then
+      -- if cmp.visible() then
+      --   cmp.select_next_item()
+      if require("luasnip").expand_or_jumpable() then
         require("luasnip").expand_or_jump()
       else
         fallback()
@@ -35,9 +35,9 @@ local options = {
     end, { "i", "s" }),
 
     ["<S-CR>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif require("luasnip").jumpable(-1) then
+      -- if cmp.visible() then
+      --   cmp.select_prev_item()
+      if require("luasnip").jumpable(-1) then
         require("luasnip").jump(-1)
       else
         fallback()
