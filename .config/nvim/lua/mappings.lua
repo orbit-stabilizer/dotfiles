@@ -17,6 +17,8 @@ unmap("n", "<leader>v")
 unmap("n", "<A-i>")
 unmap("n", "<A-v>")
 unmap("n", "<A-h>")
+unmap("n", "<TAB>")
+unmap("n", "<S-TAB>")
 
 -- Telescope
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
@@ -49,6 +51,9 @@ map("n", "<C-d>", "<C-d>zz")
 
 map("n", "{", "}zz", { desc = "Move down" })
 map("n", "}", "{zz", { desc = "Move down" })
+
+map("n", "<TAB>", ":bn<CR>", { desc = "Go to next tab" })
+map("n", "<S-TAB>", ":bp<CR>", { desc = "Go to previous tab" })
 
 -- Remove highlight
 map("n", "<leader><leader>", ":noh<CR>", { desc = "Clear highlighting" })
