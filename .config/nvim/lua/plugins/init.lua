@@ -37,8 +37,8 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = function(_, conf)
       conf.defaults.mappings.i = {
-        ["<C-k>"] = require("telescope.actions").move_selection_previous,
-        ["<C-j>"] = require("telescope.actions").move_selection_next,
+        ["<C-p>"] = require("telescope.actions").move_selection_previous,
+        ["<C-n>"] = require("telescope.actions").move_selection_next,
       }
 
       -- or
