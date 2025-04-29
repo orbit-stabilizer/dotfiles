@@ -11,6 +11,10 @@ unmap("n", "<leader>fm")
 unmap("n", "<leader>fz")
 unmap("n", "<leader>ma")
 unmap("n", "<leader>th")
+unmap("n", "<leader>pt") -- Remove terminal search mapping
+unmap("n", "<leader>gt") -- Remove git status search because I want to remap it
+unmap("n", "<leader>cm") -- Remove git commits search because I want to remap it
+unmap("n", "<leader>x") -- Remove close buffer mapping
 unmap("n", "<C-n>") -- Remove nvimtree toggle
 unmap("n", "<leader>h")
 unmap("n", "<leader>v")
@@ -19,12 +23,20 @@ unmap("n", "<A-v>")
 unmap("n", "<A-h>")
 unmap("n", "<TAB>")
 unmap("n", "<S-TAB>")
+unmap("n", "<C-s>")
 
 -- Telescope
-map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<leader>ft", "<cmd>Telescope live_grep<CR>", { desc = "telescope find text" })
 map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
-map("n", "<leader>fl", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
+map(
+  "n",
+  "<leader>fl",
+  "<cmd>Telescope current_buffer_fuzzy_find<CR>",
+  { desc = "telescope find in current (local) buffer" }
+)
 map("n", "<leader>fs", "<cmd>Telescope lsp_document_symbols<CR>", { desc = "telescope search lsp document symbols" })
+map("n", "<leader>fc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+map("n", "<leader>fg", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
 map("n", "<leader>fT", function()
   require("nvchad.themes").open {
     style = "bordered",
