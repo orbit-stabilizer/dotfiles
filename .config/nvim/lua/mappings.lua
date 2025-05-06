@@ -67,8 +67,9 @@ map("n", "}", "{zz", { desc = "Move down" })
 map("n", "<TAB>", ":bn<CR>", { desc = "Go to next tab" })
 map("n", "<S-TAB>", ":bp<CR>", { desc = "Go to previous tab" })
 
--- Remove highlight
+-- Etc
 map("n", "<leader><leader>", ":noh<CR>", { desc = "Clear highlighting" })
+map("n", ";", ":", { desc = "Open command line" })
 
 -- Split window navigation
 local ss = require "smart-splits"
