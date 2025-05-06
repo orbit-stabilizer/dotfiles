@@ -88,6 +88,14 @@ map("n", "<C-A-j>", ss.swap_buf_down)
 map("n", "<C-A-k>", ss.swap_buf_up)
 map("n", "<C-A-l>", ss.swap_buf_right)
 
+-- Remapping J K because they are used with smart-motion.nvim
+map("n", "gj", ":j<CR>", { desc = "Join lines" })
+map("n", "gk", vim.lsp.buf.hover, { desc = "LSP Hover" })
+
+-- Making quickfix better
+map("n", "gp", ":cp<CR>", { desc = "Go to previous quickfix list item" })
+map("n", "gn", ":cn<CR>", { desc = "Go to next quickfix list item" })
+
 -- Highlighit yanked text
 map_autcmd("TextYankPost", {
   callback = function()

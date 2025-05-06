@@ -165,18 +165,64 @@ return {
   { "akinsho/toggleterm.nvim", enabled = false },
 
   -- Flash
+  -- {
+  -- "folke/flash.nvim",
+  -- event = "VeryLazy",
+  -- ---@type Flash.Config
+  -- opts = {},
+  -- -- stylua: ignore
+  -- keys = {
+  --   { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+  --   { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+  --   { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+  --   { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+  --   { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+  -- },
+  -- },
+
+  -- Smart motion
   {
-    "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-  -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    "FluxxField/smart-motion.nvim",
+    opts = {
+      presets = {
+        words = {
+          w = {
+            trigger_key = "W",
+          },
+          e = {
+            trigger_key = "E",
+          },
+          b = {
+            trigger_key = "B",
+          },
+        },
+        lines = {
+          j = {
+            trigger_key = "J",
+          },
+          k = {
+            trigger_key = "K",
+          },
+        },
+        search = {
+          f = {
+            map = false,
+          },
+          F = {
+            map = false,
+          },
+        },
+        delete = true,
+        yank = true,
+        change = true,
+      },
+    },
+    lazy = false,
   },
+
+  {
+    "eraserhd/parinfer-rust",
+    build = "cargo build --release",
+    lazy = false,
   },
 }
