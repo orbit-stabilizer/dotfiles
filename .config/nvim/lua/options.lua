@@ -4,4 +4,5 @@ require "nvchad.options"
 
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
-vim.o.cmdheight = 1
+-- vim.opt.cmdheight = 1
+-- vim.opt.ignorecase = true

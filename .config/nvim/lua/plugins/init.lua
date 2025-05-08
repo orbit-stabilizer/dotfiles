@@ -186,35 +186,27 @@ return {
     opts = {
       presets = {
         words = {
-          w = {
-            trigger_key = "W",
-          },
-          e = {
-            trigger_key = "E",
-          },
-          b = {
-            trigger_key = "B",
-          },
+          w = { trigger_key = "W" },
+          e = { trigger_key = "E" },
+          b = { trigger_key = "B" },
         },
         lines = {
-          j = {
-            trigger_key = "J",
-          },
-          k = {
-            trigger_key = "K",
-          },
+          j = { trigger_key = "J" },
+          k = { trigger_key = "K" },
         },
         search = {
-          f = {
-            map = false,
-          },
-          F = {
-            map = false,
-          },
+          f = { map = false },
+          F = { map = false },
         },
-        delete = true,
-        yank = true,
-        change = true,
+        delete = {
+          d = { map = false },
+        },
+        yank = {
+          y = { map = false },
+        },
+        change = {
+          c = { map = false },
+        },
       },
     },
     lazy = false,
@@ -240,6 +232,16 @@ return {
       --   `nvim-notify` is only needed, if you want to use the notification view.
       --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
+    },
+    lazy = false,
+  },
+
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ui = {
+        border = "rounded",
+      },
     },
   },
 }

@@ -20,6 +20,9 @@ M.ui = {
     -- lazyload = false
     enabled = false,
   },
+  telescope = {
+    style = "bordered",
+  },
 }
 
 return M

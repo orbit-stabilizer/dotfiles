@@ -91,7 +91,9 @@ map("n", "<C-A-l>", ss.swap_buf_right)
 
 -- Remapping J K because they are used with smart-motion.nvim
 map("n", "gj", ":j<CR>", { desc = "Join lines" })
-map("n", "gk", vim.lsp.buf.hover, { desc = "LSP Hover" })
+map("n", "gk", function()
+  vim.lsp.buf.hover { border = "rounded" }
+end, { desc = "LSP Hover" })
 
 -- Making quickfix better
 map("n", "gp", ":cp<CR>", { desc = "Go to previous quickfix list item" })
@@ -103,3 +105,6 @@ map_autcmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- Toggle diagnostics
+map("n", "<leader>lf", vim.diagnostic.open_float, { desc = "Lsp floating diagnostics" })
