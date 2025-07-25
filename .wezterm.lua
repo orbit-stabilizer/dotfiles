@@ -6,8 +6,8 @@ local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
 
-config.color_scheme = "Tokyo Night"
-config.window_decorations = "RESIZE"
+config.color_scheme = "Everforest Dark (Gogh)"
+-- config.window_decorations = "RESIZE"
 config.window_padding = {
 	top = 0,
 	left = 0,
@@ -95,6 +95,7 @@ config.keys = {
 }
 
 config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
 config.status_update_interval = 100
 wezterm.on("update-right-status", function(window, pane)
 	local basename = function(s)
