@@ -1,2 +1,5 @@
 # Ignore .tasks files for the doing.nvim plugin
 .tasks
+.clojure/.clj-kondo/*
+.clojure/.cpcache
+.lsp
