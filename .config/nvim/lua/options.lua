@@ -1,8 +1,10 @@
-require "nvchad.options"
+local o = vim.opt
 
--- add yours here!
+-- Set char to show for EOF lines
+o.fillchars = { eob = " "}
 
--- local o = vim.o
--- o.cursorlineopt ='both' -- to enable cursorline!
--- vim.opt.cmdheight = 1
--- vim.opt.ignorecase = true
+-- Set line numbers
+o.number = false
+
+-- Set bottom status bar
+o.laststatus = 0
