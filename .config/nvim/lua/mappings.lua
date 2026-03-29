@@ -1,28 +1,25 @@
+require "nvchad.mappings"
+
 local map = vim.keymap.set
--- local unmap = vim.keymap.del
-local map_autcmd = vim.api.nvim_create_autocmd
 
--- Split window navigation
-local ss = require "smart-splits"
-map("n", "<A-h>", ss.resize_left)
-map("n", "<A-j>", ss.resize_down)
-map("n", "<A-k>", ss.resize_up)
-map("n", "<A-l>", ss.resize_right)
+-- make enter be : for easy access
+map("n", "<CR>", ":")
+map("n", "<Tab>", "<CR>")
+
+
+-- resizing splits
+vim.keymap.set('n', '<A-h>', require('smart-splits').resize_left)
+vim.keymap.set('n', '<A-j>', require('smart-splits').resize_down)
+vim.keymap.set('n', '<A-k>', require('smart-splits').resize_up)
+vim.keymap.set('n', '<A-l>', require('smart-splits').resize_right)
 -- moving between splits
-map("n", "<C-h>", ss.move_cursor_left)
-map("n", "<C-j>", ss.move_cursor_down)
-map("n", "<C-k>", ss.move_cursor_up)
-map("n", "<C-l>", ss.move_cursor_right)
-map("n", "<C-/>", ss.move_cursor_previous)
+vim.keymap.set('n', '<C-h>', require('smart-splits').move_cursor_left)
+vim.keymap.set('n', '<C-j>', require('smart-splits').move_cursor_down)
+vim.keymap.set('n', '<C-k>', require('smart-splits').move_cursor_up)
+vim.keymap.set('n', '<C-l>', require('smart-splits').move_cursor_right)
+vim.keymap.set('n', '<C-\\>', require('smart-splits').move_cursor_previous)
 -- swapping buffers between windows
-map("n", "<C-A-h>", ss.swap_buf_left)
-map("n", "<C-A-j>", ss.swap_buf_down)
-map("n", "<C-A-k>", ss.swap_buf_up)
-map("n", "<C-A-l>", ss.swap_buf_right)
-
--- Highlighit yanked text
-map_autcmd("TextYankPost", {
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
+vim.keymap.set('n', '<leader><leader>h', require('smart-splits').swap_buf_left)
+vim.keymap.set('n', '<leader><leader>j', require('smart-splits').swap_buf_down)
+vim.keymap.set('n', '<leader><leader>k', require('smart-splits').swap_buf_up)
+vim.keymap.set('n', '<leader><leader>l', require('smart-splits').swap_buf_right)
