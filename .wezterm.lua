@@ -6,7 +6,8 @@ local resurrect = wezterm.plugin.require("https://github.com/MLFlexer/resurrect.
 config.front_end = "WebGpu"
 config.webgpu_power_preference = "HighPerformance"
 
-config.color_scheme = "Everforest Dark (Gogh)"
+config.color_scheme = "Gruvbox Dark (Gogh)"
+-- config.color_scheme = "Quiet (Gogh)"
 -- config.window_decorations = "RESIZE"
 config.window_padding = {
 	top = 0,
@@ -15,16 +16,19 @@ config.window_padding = {
 	bottom = 0,
 }
 
+local act = wezterm.action
+
+
 config.keys = {
-	{ key = "\\", mods = "CMD", action = wezterm.action.SplitPane({ direction = "Down", size = { Percent = 20 } }) },
+	{ key = "d", mods = "CMD|SHIFT", action = wezterm.action.SplitPane({ direction = "Down", size = { Percent = 20 } }) },
 	{
-		key = "|",
+		key = "r",
 		mods = "CMD|SHIFT",
 		action = wezterm.action.SplitPane({ direction = "Right", size = { Percent = 20 } }),
 	},
-	{ key = "p", mods = "CMD", action = wezterm.action.ActivateCommandPalette },
-	{ key = "/", mods = "CMD", action = wezterm.action.TogglePaneZoomState },
-	{ key = "n", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
+	{ key = "p", mods = "CMD|SHIFT", action = wezterm.action.ActivateCommandPalette },
+	{ key = "s", mods = "CMD|SHIFT", action = wezterm.action.TogglePaneZoomState },
+	{ key = "t", mods = "CMD|SHIFT", action = wezterm.action.ShowTabNavigator },
 	{
 		key = "e",
 		mods = "CMD",
@@ -124,6 +128,17 @@ end)
 
 config.default_prog = { "/opt/homebrew/bin/nu" }
 
-smart_splits.apply_to_config(config)
+smart_splits.apply_to_config(config, {
+  modifiers = {
+    move = "CTRL",
+  },
+})
+
+
+-- config.font = wezterm.font 'Iosevka Term'
+-- config.font = wezterm.font "Victor Mono"
+config.font = wezterm.font "Fira Code Light"
+
+
 
 return config
